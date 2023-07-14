@@ -1,9 +1,20 @@
-import Typography from "@mui/material/Typography";
+import Cards from "./Cards";
+
 function Home() {
   return (
     <>
-      <div>
-        <Typography></Typography>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          flexWrap: "wrap",
+          gap: "10px",
+        }}
+      >
+        <Cards />
+        <Cards />
+        <Cards />
+        <Cards />
       </div>
     </>
   );
