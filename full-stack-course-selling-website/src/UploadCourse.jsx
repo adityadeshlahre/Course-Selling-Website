@@ -1,0 +1,68 @@
+import { TextField, Box, Button, Card, Typography } from "@mui/material";
+
+function UplodaCourse() {
+  return (
+    <>
+      <center>
+        <div style={{ paddingTop: "20px" }}>
+          <Card
+            sx={{ maxWidth: 445, boxShadow: 10 }}
+            style={{ paddingBottom: "20px" }}
+          >
+            <div style={{ paddingTop: "10px" }}>
+              <Typography style={{ fontWeight: "bolder", fontSize: "30px" }}>
+                Upload Course Form
+              </Typography>
+            </div>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                margin: "auto",
+                padding: "20px",
+              }}
+            >
+              <form>
+                <TextField
+                  fullWidth={true}
+                  label="Title"
+                  required
+                  margin="normal"
+                />
+                <TextField
+                  fullWidth={true}
+                  label="Description"
+                  required
+                  margin="normal"
+                />
+                <TextField
+                  fullWidth={true}
+                  label="Image Link"
+                  required
+                  margin="normal"
+                />
+                <TextField
+                  fullWidth={true}
+                  label="Price"
+                  required
+                  margin="normal"
+                />
+                <br />
+                <Button
+                  type="submit"
+                  variant="contained"
+                  color="primary"
+                  sx={{ marginTop: "16px" }}
+                >
+                  Upload
+                </Button>
+              </form>
+            </Box>
+          </Card>
+        </div>
+      </center>
+    </>
+  );
+}
+
+export default UplodaCourse;

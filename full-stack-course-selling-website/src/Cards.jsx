@@ -10,11 +10,14 @@ function Cards() {
   return (
     <>
       <center>
-        <Card sx={{ maxWidth: 345 }} style={{ paddingBottom: "20px" }}>
+        <Card
+          sx={{ maxWidth: 345 }}
+          style={{ paddingBottom: "20px", borderRadius: "40px" }}
+        >
           <CardMedia
             component="img"
-            height="140"
-            image="https://imgv3.fotor.com/images/blog-cover-image/part-blurry-image.jpg"
+            height="200"
+            image="https://picsum.photos/200"
             alt="green iguana"
           />
           <CardContent>
@@ -22,9 +25,8 @@ function Cards() {
               Loram
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem
-              voluptatibus molestiae impedit est, ipsa perspiciatis et
-              repudiandae ea provident. Vitae fugit praesentium sit
+              Lorem ipsum dolor sit amet consectetur adipisicing elit Rem
+              oluptatibus molestiae impedit est
             </Typography>
           </CardContent>
           <Button
@@ -34,10 +36,11 @@ function Cards() {
               color: "white",
               textTransform: "none",
               backgroundColor: "#00aagg",
+              borderRadius: "20px",
             }}
             variant="contained"
           >
-            Purchase
+            View Details
           </Button>
         </Card>
       </center>

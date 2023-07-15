@@ -6,7 +6,7 @@ function Appbar() {
   return (
     <>
       <Paper elevation={3}>
-        <div style={{ padding: "20px" }}>
+        <div style={{ padding: "20px", backgroundColor: "#eeeeee" }}>
           <Box sx={{ boxShadow: 10 }}>
             <div
               style={{
@@ -16,6 +16,7 @@ function Appbar() {
                 paddingRight: "8px",
                 paddingLeft: "4px",
                 boxShadow: 3,
+                backgroundColor: "white",
               }}
             >
               <div style={{ display: "flex" }}>
