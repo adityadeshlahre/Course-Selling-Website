@@ -4,7 +4,7 @@ function UplodaCourse() {
   return (
     <>
       <center>
-        <div style={{ paddingTop: "20px" }}>
+        <div style={{ padding: "20px" }}>
           <Card
             sx={{ maxWidth: 445, boxShadow: 10 }}
             style={{ paddingBottom: "20px" }}

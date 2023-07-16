@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import Home from "./Home";
 import Appbar from "./Appbar";
@@ -8,8 +8,9 @@ import Registration from "./Registration";
 import Loginup from "./Loginup";
 import UplodaCourse from "./UploadCourse";
 import UpdateCourse from "./UpdateCourse";
-// import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Footer from "./Footer";
+import AllCourses from "./AllCourses";
 
 function App() {
   return (
@@ -20,17 +21,18 @@ function App() {
           height: "100vh",
         }}
       >
-        {/* <Home />
-        <Slider />
-        <Registration />
-        <Loginup />
-        <UplodaCourse />
-        <UpdateCourse /> */}
-        <Appbar />
-
-        <Home />
-
-        <Footer />
+        <Router>
+          <Appbar />
+          <Routes>
+            <Route path={"/addcourse"} element={<UplodaCourse />} />
+            <Route path={"/course/"} element={<UpdateCourse />} />
+            <Route path={"/courses"} element={<AllCourses />} />
+            <Route path={"/singup"} element={<Registration />} />
+            <Route path={"/singin"} element={<Loginup />} />
+            <Route path={"/*"} element={<Home />} />
+          </Routes>
+          <Footer />
+        </Router>
       </div>
     </>
   );

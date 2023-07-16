@@ -56,7 +56,7 @@ function Appbar() {
                 <div style={{ paddingTop: "8px" }}>
                   <Button
                     style={{
-                      fontSize: "20px",
+                      fontSize: "19px",
                       fontWeight: "bold",
                       color: "white",
                       textTransform: "none",

@@ -14,15 +14,25 @@ function Home() {
           padding: "20px",
         }}
       >
-        <div style={{ display: "flex" }}>
-          <Card style={{ borderRadius: "40px" }}>
+        <div
+          style={{
+            width: "70%",
+            height: "30%",
+            maxWidth: "100%",
+            maxHeight: "100%",
+          }}
+        >
+          <Card
+            style={{
+              borderRadius: "40px",
+            }}
+          >
             <img
-              src="https://picsum.photos/600/300?grayscale"
-              srcSet="https://picsum.photos/600/300?grayscale"
+              src="https://picsum.photos/1200/300?grayscale"
               alt="Banner Image"
             />
             <Typography style={{ fontSize: "30px", textAlign: "center" }}>
-              Banner
+              Highlight
             </Typography>
           </Card>
         </div>
@@ -37,7 +47,18 @@ function Home() {
           >
             Free Learning
           </Typography>
-          <Cards />
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              justifyContent: "center",
+              gap: "10px",
+            }}
+          >
+            <Cards />
+            <Cards />
+            <Cards />
+          </div>
           <br />
           <Typography
             style={{
@@ -49,20 +70,30 @@ function Home() {
           >
             Featured Course
           </Typography>
-          <Cards1 />
-          <br />
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            <Card
-              sx={{
-                borderRadius: "40px",
-                maxWidth: "90%",
-                background: "linear-gradient(to right, #e8ddfe, #e1b991)",
-                padding: "20px",
-              }}
-            >
-              <center>
-                <h3>Welcome to Courses</h3>
-              </center>
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              justifyContent: "center",
+              gap: "10px",
+            }}
+          >
+            <Cards1 />
+            <Cards1 />
+          </div>
+        </div>
+        <br />
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <Card
+            sx={{
+              borderRadius: "40px",
+              maxWidth: "90%",
+              background: "linear-gradient(to right, #e8ddfe, #e1b991)",
+              padding: "20px",
+            }}
+          >
+            <center>
+              <h3>Welcome to Courses</h3>
               <br />
               <strong>
                 Discover endless learning opportunities on LearnHub. Explore
@@ -80,8 +111,8 @@ function Home() {
               <br />
               Earn certificates to enhance your professional profile.
               <strong>Start your learning journey with LearnHub today.</strong>
-            </Card>
-          </div>
+            </center>
+          </Card>
         </div>
       </div>
     </>

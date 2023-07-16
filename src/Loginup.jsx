@@ -15,14 +15,14 @@ function Loginup() {
   return (
     <>
       <center>
-        <div style={{ paddingTop: "20px" }}>
+        <div style={{ padding: "20px" }}>
           <Card
             sx={{ maxWidth: 445, boxShadow: 10 }}
             style={{ paddingBottom: "20px" }}
           >
             <div style={{ paddingTop: "10px" }}>
               <Typography style={{ fontWeight: "bolder", fontSize: "30px" }}>
-                Login/Singup Form
+                Login/Singin Form
               </Typography>
             </div>
             <Box
