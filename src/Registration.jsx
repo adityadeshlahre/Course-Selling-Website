@@ -10,8 +10,13 @@ import {
   OutlinedInput,
   Typography,
 } from "@mui/material";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 function Registration() {
+  const [selectedRole, setSelectedRole] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   return (
     <>
       <center>
@@ -34,17 +39,27 @@ function Registration() {
             >
               <form>
                 <TextField
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
                   type="email"
                   label="Email"
                   required
                   margin="normal"
                 />
                 <TextField
+                  onChange={(e) => {
+                    setPassword(e.target.value);
+                  }}
                   type="password"
                   label="Password"
                   required
                   margin="normal"
                 />
+                <Typography variant="subtitle1" color="red">
+                  <strong>Note : </strong>Sigup as ADMIN <br /> only for course
+                  uploads.
+                </Typography>
                 <div>
                   <FormControl sx={{ minWidth: "245px", marginTop: "16px" }}>
                     <InputLabel id="role-label" required>
@@ -55,6 +70,8 @@ function Registration() {
                       labelId="role-label"
                       id="role-select"
                       required
+                      value={selectedRole}
+                      onChange={(e) => setSelectedRole(e.target.value)}
                     >
                       <MenuItem value="user">User</MenuItem>
                       <MenuItem value="admin">Admin</MenuItem>
@@ -66,6 +83,29 @@ function Registration() {
                   variant="contained"
                   color="primary"
                   sx={{ marginTop: "16px" }}
+                  onClick={async (e) => {
+                    e.preventDefault();
+                    const url =
+                      selectedRole === "user"
+                        ? "http://localhost:3000/user/signup"
+                        : "http://localhost:3000/admin/signup";
+                    const res = await axios.post(
+                      url,
+                      {
+                        username: email,
+                        password: password,
+                      },
+                      {
+                        headers: {
+                          "Content-type": "application/json",
+                        },
+                      }
+                    );
+                    const data = res.data;
+
+                    localStorage.setItem("token", data.token);
+                    window.location = "/";
+                  }}
                 >
                   Sign up
                 </Button>

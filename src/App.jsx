@@ -27,8 +27,8 @@ function App() {
             <Route path={"/addcourse"} element={<UplodaCourse />} />
             <Route path={"/course/"} element={<UpdateCourse />} />
             <Route path={"/courses"} element={<AllCourses />} />
-            <Route path={"/singup"} element={<Registration />} />
-            <Route path={"/singin"} element={<Loginup />} />
+            <Route path={"/signup"} element={<Registration />} />
+            <Route path={"/signin"} element={<Loginup />} />
             <Route path={"/*"} element={<Home />} />
           </Routes>
           <Footer />

@@ -8,6 +8,7 @@ const { authenticateJwt } = require("../middleware/auth");
 const router = express.Router();
 
 router.get("/me", authenticateJwt, async (req, res) => {
+  console.log(req.user.username)
     const admin = await Admin.findOne({ username: req.user.username });
     if (!admin) {
       res.status(403).json({msg: "Admin doesnt exist"})
