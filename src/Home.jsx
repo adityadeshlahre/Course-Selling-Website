@@ -60,7 +60,7 @@ function Home() {
             <Cards />
           </div>
           <br />
-          {/* <Typography
+          <Typography
             style={{
               textAlign: "center",
               fontWeight: "bold",
@@ -68,8 +68,8 @@ function Home() {
               padding: "5px",
             }}
           >
-            Featured Course
-          </Typography> */}
+            Paid Courses
+          </Typography>
           <div
             style={{
               display: "flex",

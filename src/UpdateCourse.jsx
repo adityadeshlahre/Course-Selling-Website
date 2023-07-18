@@ -155,7 +155,8 @@ export function UpdateCourse({ props, course, setCourse }) {
                   variant="contained"
                   color="primary"
                   sx={{ marginTop: "16px" }}
-                  onClick={async () => {
+                  onClick={async (e) => {
+                    e.preventDefault();
                     axios.put(
                       "http://localhost:3000/admin/courses/" + course._id,
                       {
@@ -181,6 +182,7 @@ export function UpdateCourse({ props, course, setCourse }) {
                       price,
                     };
                     setCourse(updatedCourse);
+                    alert("'Course Updated'");
                   }}
                 >
                   Update Course

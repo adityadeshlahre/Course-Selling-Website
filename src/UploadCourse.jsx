@@ -72,7 +72,8 @@ function UplodaCourse() {
                   variant="contained"
                   color="primary"
                   sx={{ marginTop: "16px" }}
-                  onClick={async () => {
+                  onClick={async (e) => {
+                    e.preventDefault();
                     await axios.post(
                       "http://localhost:3000/admin/courses",
                       {
@@ -89,7 +90,7 @@ function UplodaCourse() {
                         },
                       }
                     );
-                    alert("Added course!");
+                    alert("'Course Uploaded'");
                   }}
                 >
                   Upload

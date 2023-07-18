@@ -99,6 +99,22 @@ function Appbar() {
                         }}
                         variant="outlined"
                         onClick={() => {
+                          navigate("/purchasedCourses");
+                        }}
+                      >
+                        Purchased Courses
+                      </Button>
+                    </div>
+                    <div style={{ paddingTop: "8px" }}>
+                      <Button
+                        style={{
+                          fontSize: "20px",
+                          fontWeight: "bold",
+                          color: "black",
+                          textTransform: "none",
+                        }}
+                        variant="outlined"
+                        onClick={() => {
                           navigate("/courses");
                         }}
                       >

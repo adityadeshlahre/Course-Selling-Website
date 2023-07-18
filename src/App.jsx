@@ -11,6 +11,7 @@ import UpdateCourse from "./UpdateCourse";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Footer from "./Footer";
 import AllCourses from "./AllCourses";
+import PurchasedCourses from "./purchasedCourses";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Appbar />
           <Routes>
             <Route path={"/addcourse"} element={<UplodaCourse />} />
+            <Route path={"/purchasedCourses"} element={<PurchasedCourses />} />
             <Route path={"/course/:courseId"} element={<UpdateCourse />} />
             <Route path={"/courses"} element={<AllCourses />} />
             <Route path={"/signup"} element={<Registration />} />
