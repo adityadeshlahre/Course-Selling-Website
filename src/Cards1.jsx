@@ -1,16 +1,44 @@
-import {
-  Typography,
-  Card,
-  CardMedia,
-  CardContent,
-  Button,
-} from "@mui/material/";
+import { Typography, Card, Button } from "@mui/material/";
 import AspectRatio from "@mui/joy/AspectRatio";
+import * as React from "react";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
-function Cards1() {
+function Courses() {
+  const [courses, setCourses] = useState([]);
+
+  useEffect(() => {
+    function callback2(data) {
+      setCourses(data.courses);
+    }
+    function callback1(res) {
+      res.json().then(callback2);
+    }
+    fetch("http://localhost:3000/admin/courses/", {
+      method: "GET",
+      headers: {
+        Authorization: "Bearer " + localStorage.getItem("token"),
+      },
+    }).then(callback1);
+  }, []);
+
+  return (
+    <div
+      style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
+    >
+      {courses.map((course) => {
+        return <Cards1 course={course} />;
+      })}
+    </div>
+  );
+}
+
+export function Cards1(props) {
+  const course = props.course;
   return (
     <>
-      <center>
+      <center style={{ padding: "10px" }}>
         <Card
           variant="outlined"
           sx={{ width: 300 }}
@@ -18,18 +46,20 @@ function Cards1() {
         >
           <AspectRatio ratio={16 / 9}>
             <div>
-              <img
-                src="https://picsum.photos/200/300"
-                srcSet="https://picsum.photos/200/300"
-                alt="A beautiful landscape."
-              />
+              <img src={course.imageLink} />
             </div>
           </AspectRatio>
           <div>
             <Typography variant="h3" fontSize="30px">
-              Title
+              {course.title}
             </Typography>
-            <Typography level="body2">Description of the card.</Typography>
+            <Typography level="body2">{course.description}</Typography>
+            <Typography variant="subtitle2" style={{ color: "gray" }}>
+              Price
+            </Typography>
+            <Typography variant="subtitle1">
+              <b>Rs {course.price} </b>
+            </Typography>
           </div>
           <Button
             style={{
@@ -50,4 +80,4 @@ function Cards1() {
   );
 }
 
-export default Cards1;
+export default Courses;

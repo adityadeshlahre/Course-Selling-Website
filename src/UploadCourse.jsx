@@ -1,6 +1,13 @@
 import { TextField, Box, Button, Card, Typography } from "@mui/material";
+import { useState } from "react";
+import axios from "axios";
 
 function UplodaCourse() {
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [image, setImage] = useState("");
+  const [price, setPrice] = useState(0);
+
   return (
     <>
       <center>
@@ -28,24 +35,36 @@ function UplodaCourse() {
                   label="Title"
                   required
                   margin="normal"
+                  onChange={(e) => {
+                    setTitle(e.target.value);
+                  }}
                 />
                 <TextField
                   fullWidth={true}
                   label="Description"
                   required
                   margin="normal"
+                  onChange={(e) => {
+                    setDescription(e.target.value);
+                  }}
                 />
                 <TextField
                   fullWidth={true}
                   label="Image Link"
                   required
                   margin="normal"
+                  onChange={(e) => {
+                    setImage(e.target.value);
+                  }}
                 />
                 <TextField
                   fullWidth={true}
                   label="Price"
                   required
                   margin="normal"
+                  onChange={(e) => {
+                    setPrice(e.target.value);
+                  }}
                 />
                 <br />
                 <Button
@@ -53,6 +72,25 @@ function UplodaCourse() {
                   variant="contained"
                   color="primary"
                   sx={{ marginTop: "16px" }}
+                  onClick={async () => {
+                    await axios.post(
+                      "http://localhost:3000/admin/courses",
+                      {
+                        title: title,
+                        description: description,
+                        imageLink: image,
+                        published: true,
+                        price,
+                      },
+                      {
+                        headers: {
+                          Authorization:
+                            "Bearer " + localStorage.getItem("token"),
+                        },
+                      }
+                    );
+                    alert("Added course!");
+                  }}
                 >
                   Upload
                 </Button>

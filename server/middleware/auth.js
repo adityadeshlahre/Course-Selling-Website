@@ -3,7 +3,6 @@ const SECRET = 'S3cr3T';  // This should be in an environment variable in a real
 
 const authenticateJwt = (req, res, next) => {
   const authHeader = req.headers.authorization;
-  console.log(authHeader)
   if (authHeader) {
     const token = authHeader.split(' ')[1];
     jwt.verify(token, SECRET, (err, user) => {
@@ -11,7 +10,6 @@ const authenticateJwt = (req, res, next) => {
         return res.sendStatus(403);
       }
       req.user = user;
-      console.log(req.user)
       next();
     });
   } else {

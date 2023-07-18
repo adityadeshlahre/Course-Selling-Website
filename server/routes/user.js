@@ -5,7 +5,6 @@ const { User, Course, Admin } = require("../db");
 const router = express.Router();
 
 router.get("/me", authenticateJwt, async (req, res) => {
-  console.log(req.user.username)
     const admin = await User.findOne({ username: req.user.username });
     if (!admin) {
       res.status(403).json({msg: "User doesnt exist"})

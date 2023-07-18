@@ -104,9 +104,7 @@ function Loginup() {
                       }
                     );
                     const data = res.data;
-                    console.log(data.token);
                     localStorage.setItem("token", data.token);
-                    console.log(data.token);
                     axios.defaults.headers.common[
                       "Authorization"
                     ] = `Bearer ${data.token}`;

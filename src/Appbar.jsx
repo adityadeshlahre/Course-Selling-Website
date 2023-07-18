@@ -19,7 +19,6 @@ function Appbar() {
           },
         });
         const data = response.data;
-        console.log(data);
         if (data.username) {
           setUserEmail(data.username);
         }
@@ -310,15 +309,8 @@ function Appbar() {
                           navigate("/signup");
                         }}
                       >
-                        Buy Now
+                        Register
                       </Button>
-                    </div>
-                    <div style={{ paddingTop: "5px" }}>
-                      <Avatar
-                        sx={{ width: 50, height: 50 }}
-                        alt="Cananon"
-                        src="https://cdn.icon-icons.com/icons2/1879/PNG/512/iconfinder-4-avatar-2754580_120522.png"
-                      />
                     </div>
                   </div>
                 </div>

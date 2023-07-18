@@ -60,7 +60,7 @@ function Home() {
             <Cards />
           </div>
           <br />
-          <Typography
+          {/* <Typography
             style={{
               textAlign: "center",
               fontWeight: "bold",
@@ -69,7 +69,7 @@ function Home() {
             }}
           >
             Featured Course
-          </Typography>
+          </Typography> */}
           <div
             style={{
               display: "flex",
@@ -78,7 +78,6 @@ function Home() {
               gap: "10px",
             }}
           >
-            <Cards1 />
             <Cards1 />
           </div>
         </div>

@@ -25,7 +25,7 @@ function App() {
           <Appbar />
           <Routes>
             <Route path={"/addcourse"} element={<UplodaCourse />} />
-            <Route path={"/course/"} element={<UpdateCourse />} />
+            <Route path={"/course/:courseId"} element={<UpdateCourse />} />
             <Route path={"/courses"} element={<AllCourses />} />
             <Route path={"/signup"} element={<Registration />} />
             <Route path={"/signin"} element={<Loginup />} />
