@@ -72,7 +72,7 @@ function Course() {
             </center>
           </Grid>
           <Grid item lg={6} md={12} sm={12}>
-            <UpdateCourse course={course} />
+            <UpdateCourse course={course} setCourse={setCourse} />
           </Grid>
         </Grid>
       </div>
@@ -80,7 +80,7 @@ function Course() {
   );
 }
 
-export function UpdateCourse({ props, course, setCourse }) {
+export function UpdateCourse({ course, setCourse }) {
   console.log("hihiihi");
   const [title, setTitle] = useState(course.title);
   const [description, setDescription] = useState(course.description);
