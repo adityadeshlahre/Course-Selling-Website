@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const adminRouter = require("./routes/admin");
 const userRouter = require("./routes/user");
+require("dotenv").config();
 
 const app = express();
 
@@ -12,9 +13,12 @@ app.use(express.json());
 app.use("/admin", adminRouter);
 app.use("/user", userRouter);
 
+const mongoURI = process.env.MONGO_URI || "";
+console.log(process.env);
+
 // Connect to MongoDB
 // DONT MISUSE THIS THANKYOU!!
-mongoose.connect("mongodb+srv://localhost:0000/courses", {
+mongoose.connect(mongoURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   dbName: "courses",

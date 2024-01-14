@@ -26,4 +26,4 @@ dist-ssr
 .gitignore
 .git
 .gitignore
-
+.env
