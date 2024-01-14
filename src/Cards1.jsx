@@ -17,7 +17,7 @@ function Courses() {
     function callback1(res) {
       res.json().then(callback2);
     }
-    fetch(`${url}//admin/courses/`, {
+    fetch(`${url}/admin/courses/`, {
       method: "GET",
       headers: {
         Authorization: "Bearer " + localStorage.getItem("token"),

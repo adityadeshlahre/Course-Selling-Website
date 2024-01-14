@@ -15,8 +15,6 @@ app.use("/user", userRouter);
 
 const mongoURI = process.env.MONGO_URI || "";
 
-// Connect to MongoDB
-// DONT MISUSE THIS THANKYOU!!
 mongoose.connect(mongoURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,

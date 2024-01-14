@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken');
-const SECRET = 'S3cr3T';  // This should be in an environment variable in a real application
+require("dotenv").config();
+const SECRET = process.env.SECRET;
 
 const authenticateJwt = (req, res, next) => {
   const authHeader = req.headers.authorization;
