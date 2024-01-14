@@ -3,7 +3,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import CircularProgress from "@mui/material/CircularProgress";
-
+require("dotenv").config();
+const url = process.env.BASE_URL || "";
 import AspectRatio from "@mui/joy/AspectRatio";
 
 function PurchasedCourses() {
@@ -13,7 +14,7 @@ function PurchasedCourses() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/user/purchasedCourses", {
+      .get(`${url}//user/purchasedCourses`, {
         method: "GET",
         headers: {
           Authorization: "Bearer " + localStorage.getItem("token"),

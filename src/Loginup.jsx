@@ -87,8 +87,8 @@ function Loginup() {
                     e.preventDefault();
                     const url =
                       selectedRole === "user"
-                        ? "http://localhost:3000/user/login"
-                        : "http://localhost:3000/admin/login";
+                        ? `${url}/user/login`
+                        : `${url}/admin/login`;
                     const res = await axios.post(
                       url,
                       {

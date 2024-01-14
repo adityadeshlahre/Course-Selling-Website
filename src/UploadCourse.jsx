@@ -1,6 +1,8 @@
 import { TextField, Box, Button, Card, Typography } from "@mui/material";
 import { useState } from "react";
 import axios from "axios";
+require("dotenv").config();
+const url = process.env.BASE_URL || "";
 
 function UplodaCourse() {
   const [title, setTitle] = useState("");
@@ -75,7 +77,7 @@ function UplodaCourse() {
                   onClick={async (e) => {
                     e.preventDefault();
                     await axios.post(
-                      "http://localhost:3000/admin/courses",
+                      `${url}//admin/courses`,
                       {
                         title: title,
                         description: description,

@@ -3,13 +3,15 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AspectRatio, Button, Card, CardContent, Typography } from "@mui/joy/";
+require("dotenv").config();
+const url = process.env.BASE_URL || "";
 
 function Courses() {
   const [courses, setCourses] = useState([]);
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/admin/courses/", {
+      .get(`${url}/admin/courses/`, {
         headers: {
           Authorization: "Bearer " + localStorage.getItem("token"),
         },
@@ -37,7 +39,7 @@ export function AllCourses({ course }) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/user/me", {
+        const response = await axios.get(`${url}//user/me`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
@@ -57,7 +59,7 @@ export function AllCourses({ course }) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/admin/me", {
+        const response = await axios.get(`${url}//admin/me`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
@@ -110,7 +112,7 @@ export function AllCourses({ course }) {
                   sx={{ ml: "auto", fontWeight: 600 }}
                   onClick={async () => {
                     await axios.post(
-                      "http://localhost:3000/user/courses/" + course._id,
+                      `${url}//user/courses/` + course._id,
                       {},
                       {
                         headers: {

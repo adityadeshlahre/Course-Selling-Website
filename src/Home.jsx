@@ -4,6 +4,8 @@ import Cards1 from "./Cards1";
 import * as React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
+require("dotenv").config();
+const url = process.env.BASE_URL || "";
 
 function Home() {
   const [userEmail, setUserEmail] = useState(null);
@@ -12,7 +14,7 @@ function Home() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/user/me", {
+        const response = await axios.get(`${url}//user/me`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
@@ -32,7 +34,7 @@ function Home() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/admin/me", {
+        const response = await axios.get(`${url}//admin/me`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },

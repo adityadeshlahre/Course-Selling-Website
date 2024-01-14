@@ -4,6 +4,8 @@ import * as React from "react";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+require("dotenv").config();
+const url = process.env.BASE_URL || "";
 
 function Appbar() {
   const navigate = useNavigate();
@@ -13,7 +15,7 @@ function Appbar() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/user/me", {
+        const response = await axios.get(`${url}//user/me`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
@@ -33,7 +35,7 @@ function Appbar() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/admin/me", {
+        const response = await axios.get(`${url}/admin/me`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },

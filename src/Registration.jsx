@@ -12,6 +12,8 @@ import {
 } from "@mui/material";
 import { useEffect, useState } from "react";
 import axios from "axios";
+require("dotenv").config();
+const url = process.env.BASE_URL || "";
 
 function Registration() {
   const [selectedRole, setSelectedRole] = useState("");
@@ -87,8 +89,8 @@ function Registration() {
                     e.preventDefault();
                     const url =
                       selectedRole === "user"
-                        ? "http://localhost:3000/user/signup"
-                        : "http://localhost:3000/admin/signup";
+                        ? `${url}//user/signup`
+                        : `${url}//admin/signup`;
                     const res = await axios.post(
                       url,
                       {

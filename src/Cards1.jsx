@@ -4,6 +4,8 @@ import * as React from "react";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+require("dotenv").config();
+const url = process.env.BASE_URL || "";
 
 function Courses() {
   const [courses, setCourses] = useState([]);
@@ -15,7 +17,7 @@ function Courses() {
     function callback1(res) {
       res.json().then(callback2);
     }
-    fetch("http://localhost:3000/admin/courses/", {
+    fetch(`${url}//admin/courses/`, {
       method: "GET",
       headers: {
         Authorization: "Bearer " + localStorage.getItem("token"),

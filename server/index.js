@@ -14,7 +14,6 @@ app.use("/admin", adminRouter);
 app.use("/user", userRouter);
 
 const mongoURI = process.env.MONGO_URI || "";
-console.log(process.env);
 
 // Connect to MongoDB
 // DONT MISUSE THIS THANKYOU!!
