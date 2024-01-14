@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AspectRatio, Button, Card, CardContent, Typography } from "@mui/joy/";
 require("dotenv").config();
-const url = process.env.BASE_URL || "";
+const url = process.env.BASE_URL;
 
 function Courses() {
   const [courses, setCourses] = useState([]);

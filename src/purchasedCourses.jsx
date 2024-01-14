@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import CircularProgress from "@mui/material/CircularProgress";
 require("dotenv").config();
-const url = process.env.BASE_URL || "";
+const url = process.env.BASE_URL;
 import AspectRatio from "@mui/joy/AspectRatio";
 
 function PurchasedCourses() {

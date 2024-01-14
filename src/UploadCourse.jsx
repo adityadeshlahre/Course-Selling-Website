@@ -2,7 +2,7 @@ import { TextField, Box, Button, Card, Typography } from "@mui/material";
 import { useState } from "react";
 import axios from "axios";
 require("dotenv").config();
-const url = process.env.BASE_URL || "";
+const url = process.env.BASE_URL;
 
 function UplodaCourse() {
   const [title, setTitle] = useState("");

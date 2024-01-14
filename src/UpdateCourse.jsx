@@ -6,7 +6,7 @@ import axios from "axios";
 import AspectRatio from "@mui/joy/AspectRatio";
 import Cards1 from "./Cards1";
 require("dotenv").config();
-const url = process.env.BASE_URL || "";
+const url = process.env.BASE_URL;
 
 function Course() {
   let { courseId } = useParams();

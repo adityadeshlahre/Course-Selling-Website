@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 require("dotenv").config();
-const url = process.env.BASE_URL || "";
+const url = process.env.BASE_URL;
 
 function Appbar() {
   const navigate = useNavigate();
